@@ -1,10 +1,11 @@
 
 /* Header Styles */
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap'); */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-family:Marcellus; */
     font-style: normal;
     font-weight: normal
 
@@ -74,7 +75,7 @@ div p {
 }
 
 .contenedor-Introduccion{
-    background-image: url("../../img/autopresentacion.jpg");
+    background-image: url("../img/autopresentacion.jpg");
     background-size:100vw;
     background-repeat: no-repeat;
     display: flex;
