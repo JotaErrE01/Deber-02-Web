@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap'); */
 
-@font-face {
+/* @font-face {
     font-family: 'Marcellus';
     src: url(../Font/Marcesasllus-Regular.ttf);
-}
+} */
 
 
 
@@ -31,7 +31,7 @@ body{
 /*Selector de nombre de etiqueta ↓*/ 
 *{
     
-    font-family: 'Marcellus', serif;
+    /* font-family: 'Marcellus', serif; */
     text-align: center;
     
 }

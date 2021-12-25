@@ -7,5 +7,4 @@ module.exports = {
         path: path.resolve(__dirname, 'src/bundle.js'),
         filename: './src/bundle.js',
     },
-
 };

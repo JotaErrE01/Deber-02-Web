@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tailwindcss -i ./tailwindCss.css -o ./src/style.css --watch",
+    "dev": "npx tailwindcss -i ./tailwindCss.css -o ./src/styles/style.css --watch",
     "build": "webpack"
   },
   "keywords": [],
