@@ -159,8 +159,6 @@ body{
         
     }
     .reserv{
-
-  
     font-size: 60px;
     letter-spacing: 0.1em;
     color: #ffffffbe;
@@ -174,7 +172,7 @@ body{
     }
     
 }
-@media screen and (max-width: 400px) {
+@media  (max-width: 640px) {
     #divbutton{
         margin-left: -15px;
     }
@@ -191,15 +189,11 @@ body{
     top: 100px;
     margin-top: -135px;
     width: 100%;
-    padding-top: 13.5%;
+    padding-top: 1.5%;
     text-align: center;
     
     }
-    .title2{
-        font-size: 10px;
-    font-weight: 0;
-    
-    }
+ 
 }
 
 /* busqueda */
