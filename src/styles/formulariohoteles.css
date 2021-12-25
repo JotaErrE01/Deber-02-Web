@@ -6,9 +6,9 @@
     background-attachment: fixed;
     background-size: cover;
 }
-*{
+/* *{
     font-family: 'Marcellus', serif;
-}
+} */
 
 .doble{
     display: grid;
