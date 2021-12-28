@@ -370,6 +370,7 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .reserva{
@@ -418,8 +419,8 @@ li{
 
 #contenedor-formulario{
     width: 75%;
-    margin: auto;
-    height: 100vh;
+    margin: 15%;
+    
 
 }
 #campos-ingreso{
