@@ -13,9 +13,6 @@ module.exports = {
 					100: "#f5f5f5",
 				},
 			},
-			// fontFamily: {
-			// 	font: ["Marcellus", "serif"],
-			// },
 			fontSize: {
 				"title": "3rem",
 				"subtitle": "2.5rem",
