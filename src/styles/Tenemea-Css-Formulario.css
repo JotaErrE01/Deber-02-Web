@@ -1,0 +1,89 @@
+h3 {
+    text-align: center;
+}
+
+a {
+    color: #f7e6e6;
+    outline: none;
+    text-decoration: none;
+}
+
+#tablaGeneral {
+    text-align: center;
+    line-height: 2.5;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(40vw - 40px);
+}
+
+table,
+td {
+    background: #e6e6e6;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+.form {
+    width: calc(41vw);
+    background: #e6e6e6;
+    border-radius: 8px;
+    margin: auto;
+    padding: 20px 30px;
+    max-width: calc(100vw);
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .3s;
+    border-bottom: 2px solid #b8b8b8
+}
+
+input:focus {
+    border-bottom: 2px solid #333333
+}
+
+p:before,
+span {
+    content: attr(type);
+    display: block;
+    margin: 28px 0 0;
+    font-size: 14px;
+    color: #5a5a5a
+}
+
+.mibutton {
+    float: right;
+    padding: 8px 12px;
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #333333;
+    border-radius: 5px;
+    background: 0;
+    color: #333333;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.mibutton:hover {
+    background: #333333;
+    color: #fff
+}
+
+.containerFormulario {
+    margin-top: 2rem;
+    width: 50%;
+    float: left;
+}
