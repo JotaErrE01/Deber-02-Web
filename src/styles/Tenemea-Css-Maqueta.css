@@ -103,3 +103,7 @@ p.subTextoTitulo {
     text-align: center;
     border-style: solid;
 }
+
+span.svgServicios {
+    display: inline-block;
+}
