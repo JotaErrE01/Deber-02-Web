@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/PrincipalEstilos.css"/>
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <title>Agencia de Turismo/Principal</title>
+</head>
+<body>
+    <div id="contenedor">
+        <header class="bg-black p-2">
+            <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
+                <a href="BayasMarcos.html" class="flex items-center">
+                    <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
+                    <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
+                </a>
+    
+                <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
+    
+                <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="RuizJonathan.html">Vuelos</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="DavilaJose.html">Hoteles</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="RonquilloVanessa.html">Reserva de Autos</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="TenemeaNeysser.html">Gastronomia</a>
+                </nav>
+            </div>
+        </header>
+            
+    </div>
+    <div class="columna">
+        <h2>Tu Agencia de Confianza</h2>
+        <img src="img/ecu.png" alt="ecuador">
+        <img src="img/quito-ecuador.jpg" alt="ecuador1"> 
+    </div>
+    
+    <section  class="titulo">
+        <div class="subtitulo">
+            <h3>Viaja por el Ecuador</h3>
+            <p>Recorre el Ecuador y crea historias que inspiren</p>
+        </div>
+        <div>
+            <!-- Elementos html no utlizados en clases: figure y figcaption-->
+            <hr>
+            <figure class="destinos">
+                <img  src="img/quito2.jpg" alt="quito">
+                    <figcaption>Déjate llevar a esos lugares mágicos que encierra <br>
+                        nuestro maravilloso territorio.
+                    </figcaption>
+            </figure>
+            <figure class="destinos">
+                <img src="img/Cuenca2.jpg" alt="Cuenca">
+                     <figcaption>EcuTravel te propone los sitios más inspiradores,
+                         <br> las experiencias más emocionantes.
+                    </figcaption>
+            </figure>
+            <figure class="destinos">
+                <img src="img/guayaquilt.jpg" alt="guayaquil">
+                    <figcaption>Elige un destino, descubre las actividades que puedes<br> realizar 
+                         en el y selecciona servicios de alojamiento.
+                    </figcaption>
+            </figure>
+                   
+        </div>  
+
+    </section><br>
+    
+    <div class="imagen">
+        <img  src="img/baños.jpg" alt="baños">
+        <div class="txt">
+            <h2>DESTINO DEL MES</h2>
+            <p>Baños y su culumpio del fin del mundo</p>
+            <a href="https://www.turismo.gob.ec/banos-un-carismatico-y-tranquilo-lugar-al-pie-de-un-volcan/" class="btn btn-o"> Ver mas</a>
+        </div>
+        
+        
+    </div> 
+    <div class="mundo">
+        <h3>La línea que une los 4 mundos</h3>
+        <p>Descubre lo que lo hace único a cada destino</p>
+    
+    
+        <!-- Elementos html no utlizados en clases: figure y figcaption-->
+        <div class="region">
+            <img src="img/galapagos2.jpg" alt="galapagos">
+            <img src="img/costa.jpg" alt="costa">
+            <img src="img/andes.jpg" alt="andes">
+            <img src="img/amazonia2.jpg" alt="amazonia">
+                
+        </div>
+               
+    </div>  
+    <section class="formu" id="formul">
+        <div class="formulario">
+            <h3>RESERVA TU VIAJE AHORA</h3>
+        </div>
+        <form>
+            <div class="field">
+                <label>Nombres</label>
+                <input type="text" name="nombre"> 
+            </div>
+                <div class="field">
+                    <label>Apellidos</label>
+                    <input type="text" name="apellido"> 
+                </div>
+            
+            <div class="field">
+                <label>Destino</label>
+                <select>
+                    <option selected disabled>Seleccione</option>
+                   <option>Quito</option> 
+                   <option>Cuenca</option> 
+                   <option>Baños</option> 
+                   <option>Guayaquil</option> 
+                   <option>Galápagos</option> 
+                </select>
+            </div>
+            <div class="field">
+                <label>Fecha del viaje</label>
+                <input type="date" name="fecha">               
+            </div>
+            <div class="field">
+                <label>E-mail</label>
+                <input type="email" name="Email">               
+            </div>           
+            <div class="field">
+                <label>Teléfono</label>
+                <input type="number" name="telefono">                
+            </div>
+            <div class="textbox">
+                <label>Sugerencias</label>
+                <textarea></textarea>
+            </div>
+            <div class="informacion">
+                <label>¿Quieres recibir información de Viajes?</label>
+                <div><input type="radio" name="informacion">Si</div>
+               <div><input type="radio" name="informacion">No</div>              
+            </div>
+            <div class="privacidad">
+                <input type="checkbox" required > 
+                <label>He leído y acepto la política de privacidad</label>              
+            </div>
+            <div class="submit">
+                <button>ENVIAR</button>
+            </div>
+        </form>   
+    </section>
+   
+    <footer class="bg-black">
+        <div class="container mx-auto flex items-center justify-center flex-col p-2">
+            <a href="/" class="text-white">
+                <i class="text-3xl fas fa-plane-departure"></i>
+            </a>
+            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
+        </div>
+    </footer>
+    <script src="./bundle.js"></script>
+</body>
+</html>
