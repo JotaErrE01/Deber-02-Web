@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./tailwindCss.css -o ./src/styles/style.css --watch",
+    "prod": "npx tailwindcss -i ./tailwindCss.css -o ./src/styles/style.css --minify",
     "build": "webpack"
   },
   "keywords": [],
