@@ -6,10 +6,12 @@
     <meta name="author" content="Tenemea Neysser" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
+    <title>Página 2 -Formulario</title>
+    <!-- Hoja de estilo interna  -->
     <link rel="stylesheet" href="styles/Tenemea-Css-Formulario.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
+    <!-- Hoja de estilo externa  -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -31,13 +33,9 @@
             </nav>
         </div>
     </header>
-
-
     <div id="formGeneral">
         <!---->
-        <div class="containerFormulario" style="margin-top: 1 rem;">
-
-
+        <div class="containerFormulario">
             <table id="tablaGeneral">
 
                 <thead>
@@ -78,22 +76,16 @@
                     </tr>
                 </tbody>
             </table>
-
         </div>
-
-
-
-
         <div class="containerFormulario">
 
             <form class="form">
-
                 <table style="text-align: center; margin: auto;">
                     <tr>
                         <td><strong>Opciones</strong> : </td>
                         <td>
-                            <select style="width: 100%;"> 
-                    <option>-- Selecciona --</option>
+                            <select required style="width: 100%;"> 
+                    <option value="">-- Selecciona --</option>
                     <option>Parrillada Personal</option>
                     <option>Lomo de res	</option> 
                     <option>Chuleta a la parrilla</option> 
@@ -104,49 +96,51 @@
                     </select>
                         </td>
                     </tr>
-
                 </table>
                 <p>
                     <span>Cantidad de platos</span>
-                    <input type="number" value="0">
+                    <input required id="valor" maxlength="3" onkeyup="validarNumero(this)">
                 </p>
                 <p>
                     <span>Nombres:</span>
-                    <input placeholder="**Neysser">
+                    <input placeholder="**Neysser" id="txt" maxlength="20" minlength="5" onkeyup="validarTexto(this)" required>
                 </p>
                 <p>
                     <span>Dirección:</span>
-                    <input placeholder="**Av. Macas    ">
+                    <input placeholder="**Av. Macas" maxlength="10" minlength="0" required>
                 </p>
                 <p>
                     <span>Correo electrónico:</span>
-                    <input placeholder="**neysser.tenemeal@ug.edu.ec">
+                    <input placeholder="**neysser.tenemeal@ug.edu.ec" type="email" name="email" id="email" onchange="validarCorreo(this.value);" required>
                 </p>
+                <div id="status">
+                </div>
                 <p>
-                    <span>Teléfono celular:</span>
-                    <input placeholder="09-  --- ----">
+                    <span>Teléfono celular  :</span>
+                    <input placeholder="09-  --- ----" maxlength="10" minlength="3" onkeyup="validarNumero(this)">
                 </p>
                 <p>
                     <span>Agrega más detalles a tu pedido:</span>
-
                 </p>
                 <p></p>
-                <textarea name="texto" placeholder="Agregar texto">
-                </textarea>
+                <textarea name="texto" required placeholder="Ingresa texto"></textarea>
                 <div></div>
-                <p></p>
+                <p>
+                    <input type="checkbox" required onchange="this.setCustomValidity(validity.valueMissing ?
+                     'Por favor, indica que aceptas los términos y condiciones.' : '');" id="terminosCondiciones">
+                    <label>He leído y acepto los <a href="#"
+                        title="Puedes leer los términos y condiciones haciendo click aquí!">términos y
+                        condiciones
+                    </a> para el pedido.</label><span class="req">* </span>
+                </p>
                 <button class="mibutton">Cotizar pedido</button>
                 <div style="clear: both;"></div>
             </form>
-
         </div>
-
-
         <div style="clear: both;">
             <br><br><br>
         </div>
     </div>
-
     <!-- Footer -->
     <footer class="bg-black">
         <div class="container mx-auto flex items-center justify-center flex-col p-2">
@@ -157,6 +151,8 @@
         </div>
     </footer>
     <script src="./bundle.js"></script>
+    <script src="js/Pagina2-Tenemea.js"></script>
+
 </body>
 
 </html>
