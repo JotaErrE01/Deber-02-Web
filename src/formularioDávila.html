@@ -33,19 +33,19 @@
 
 
 
-    <section class="form-registrar">
+    <form id="formulario" class="form-registrar">
         <h4>Reserva tu Hotel</h4>
         <div class="doble">
-            <input autocomplete="off" class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese sus nombres">
+            <input autocomplete="off" class="controls" type="text" id="nombres" placeholder="Ingrese sus nombres">
             <div class="input-group">-</div>
             <input autocomplete="off" class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellido">
             <input autocomplete="off" class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su correo electronico">
             <div class="input-group">-</div>
-            <input autocomplete="off" class="controls" type="number" name="nombres" id="celular" placeholder="Ingrese su numero celular">
-            <input autocomplete="off" class="controls" type="number" name="nombres" id="numper" placeholder="Numero de personas">
+            <input autocomplete="off" class="controls" type="number" name="celuar" id="celular" placeholder="Ingrese su numero de cedula">
+            <input autocomplete="off" class="controls" type="number" name="numper" id="numper" placeholder="Numero de personas">
             <div class="input-group">-</div>
 
-            <select class="controlsOp" name="opciones">
+            <select id="selector" class="controlsOp" name="opciones">
             <option class="optionText" value="">Elija su hotel</option>
 			<option class="optionText" value=""> Finch Bay - Galapagos</option>
 			<option class="optionText" value="">Oro verde - Cuenca</option>
@@ -54,11 +54,17 @@
             </select>
             
         </div>
-        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
-            <input class="boton" type="submit" value="Reservar">
-            
-    </section>
+        <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a> <input class="box" type="checkbox" required></p>
+        
+        <input type="submit"  class="boton" value="Reservar">
+           
 
+            
+    </form>
+
+    <div>
+        <h6 id="error"></h6>
+    </div>
 
     <!-- footer ↓ -->
 
@@ -71,5 +77,6 @@
         </div>
     </footer>
     <script src="./bundle.js" ></script>
+    <script src="validacionDavila.js"></script>
 </body>
 </html>
