@@ -1,24 +1,24 @@
 const nombre = document.getElementById("nombres");
-nombre.required = "true";
+// nombre.required = "true";
 const apellidos = document.getElementById("apellidos");
-apellidos.required = "true";
+// apellidos.required = "true";
 const correo = document.getElementById("correo");
-apellidos.required = "true";
+// apellidos.required = "true";
 const numero = document.getElementById("celular");
-numero.required = "true";
+// numero.required = "true";
 
 const numper = document.getElementById("numper");
-numper.required = "true";
+// numper.required = "true";
 
 const selector = document.getElementById("selector")
-selector.required = "true";
+// selector.required = "true";
 const form = document.getElementById("formulario");
 
 var error = document.getElementById("error");
 
+var check = document.getElementById("box");
 
 var expRegNombre=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-var expRegApellidos=/^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/;
 
 
 form.addEventListener('submit', function(edt){
@@ -28,16 +28,18 @@ form.addEventListener('submit', function(edt){
     edt.preventDefault();
     nombre.focus();
   }
-  if(!expRegApellidos.test(apellidos.value) || apellidos.value.trim() === ''){
+  if(!expRegNombre.test(apellidos.value) || apellidos.value.trim() === ''){
     alert("Ingrese un apellido valido");
     edt.preventDefault();
     apellidos.focus();
   }
 
-  if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(correo.value)){
-    alert("Ingrese correctamente su correo")
+  if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo.value)){
+    alert("Ingrese un correo valido");
     edt.preventDefault();
+    correo.focus();
   }
+
   if(numero.value.length != 10){
     alert("El numero de cedula debe tener 10 digitos");
     edt.preventDefault();
@@ -47,9 +49,16 @@ form.addEventListener('submit', function(edt){
     alert("El numero de personas no puede ser mayor a 100");
     edt.preventDefault();
   }
+  var checked = check.checked;
+  if(!checked){
+    alert("Acepta nuestros terminos y condiciones porfavor");
+    edt.preventDefault();
+  }
   
   
 });
+
+
 
 
 // function ValidaLongitud(campo, longitudMaxima) {
