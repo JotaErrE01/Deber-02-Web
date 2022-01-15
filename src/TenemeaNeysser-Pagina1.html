@@ -5,12 +5,186 @@
     <meta charset="UTF-8" />
     <meta name="author" content="Tenemea Neysser" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Maquetación Web - Float</title>
-    <link rel="stylesheet" href="styles/Tenemea-Css-Maqueta.css" />
+    <title>Pagina web - estática</title>
+    <!--Hoja de estilo local-->
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        #galeriaImagenes {
+            font-size: 0;
+            width: 60%;
+            margin: 0 auto;
+            box-shadow: 0 0 12px rgba(36, 36, 36, 0.8);
+        }
+        
+        #galeriaImagenes figure {
+            margin: 0;
+            width: 50%;
+            height: auto;
+            transition: 1s;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #galeriaImagenes figure:hover {
+            cursor: pointer;
+            z-index: 4;
+        }
+        
+        #galeriaImagenes figure img {
+            width: 100%;
+            height: auto;
+        }
+        
+        #galeriaImagenes figure:nth-child(1) {
+            transform-origin: top left;
+        }
+        
+        #galeriaImagenes figure:nth-child(2) {
+            transform-origin: top right;
+        }
+        
+        #galeriaImagenes figure:nth-child(3) {
+            transform-origin: bottom left;
+        }
+        
+        #galeriaImagenes figure:nth-child(4) {
+            transform-origin: bottom right;
+        }
+        
+        #galeriaImagenes figure:nth-child(5) {
+            transform-origin: bottom left;
+        }
+        
+        #galeriaImagenes figure:nth-child(6) {
+            transform-origin: bottom right;
+        }
+        
+        #galeriaImagenes figure figcaption {
+            margin: 0;
+            opacity: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: .3rem;
+            font-size: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            transition: .5s .6s opacity;
+        }
+        
+        .expanded {
+            transform: scale(2);
+            z-index: 5;
+        }
+        
+        #galeriaImagenes figure.expanded figcaption {
+            opacity: 1;
+        }
+        
+        .full figure:not(.expanded) {
+            pointer-events: none;
+        }
+        
+        .bloque1 {
+            width: 80%;
+            margin: auto;
+        }
+        
+        .containerTitulo {
+            width: 50%;
+            float: left;
+        }
+        
+        .tituloInicial {
+            font-family: 'Marcellus', serif;
+            color: #313131;
+            font-weight: 700;
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-top: 40px;
+        }
+        
+        p.subTextoTitulo {
+            font-family: 'Marcellus', serif;
+            font-size: 1.3rem;
+            color: #808080;
+            line-height: 1.2;
+            margin: 0;
+        }
+        
+        .mapa {
+            float: left;
+        }
+        
+        #imgComida {
+            background-image: linear-gradient(0deg, rgba(1.00, 1.00, 0.93, 0.20), rgba(255, 255, 237, 0.1)), url("img/desayuno.jpg");
+            display: block;
+            background-size: cover;
+            background-position: 50% 10%;
+            background-repeat: no-repeat;
+            min-height: 650px;
+        }
+        
+        #containerServicios {
+            clear: both;
+            width: 80%;
+            margin: auto;
+        }
+        
+        .columna {
+            float: right;
+            border-radius: 30px;
+            border: 15px solid #F5F5F5;
+            background-color: #ffffff;
+            padding-top: 30px;
+            padding-right: 3%;
+            padding-left: 3%;
+            text-align: center;
+            width: 33.33%;
+            padding-bottom: 35px;
+            line-height: 2;
+        }
+        
+        .columna:hover {
+            cursor: pointer;
+            color: #ED8600;
+            transition: color .2s ease;
+        }
+        
+        .tituloServicios {
+            clear: both;
+            margin-left: 11%;
+            text-align: center;
+            color: #F5F5F5;
+            background-color: #1d1d1b;
+            font-size: 2rem;
+            border-radius: 5px;
+            width: 78%;
+            padding-top: 1%;
+            padding-bottom: 1%;
+        }
+        
+        .form:hover {
+            color: #ed8600;
+            transition: color .3s ease;
+        }
+        
+        .form {
+            text-align: center;
+            border-style: solid;
+            font-style: italic;
+            font-weight: 700;
+            font-size: 1rem;
+            margin: auto;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
     />
-    <!-- SVG ICON  -->
+    <!-- Hoja de estilo externa  -->
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -21,7 +195,6 @@
                 <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
                 <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
             </a>
-
             <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
 
             <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
@@ -45,20 +218,14 @@
                         width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-
             <br><br><br><br>
-
-
-
         </div>
-
     </section><br>
-
     <section>
         <div id="containerServicios">
             <a href="#bebidas">
                 <div class="columna">
-                    <svg style="display:inline-block;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 172 172" style="fill:#000000;">
+                    <svg style="display:inline-block;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="80" height="80" viewBox="0 0 172 172">
                                 <g fill="none" fill-rule="nonzero" stroke="none"
                                     stroke-width="1" stroke-linecap="butt"
                                     stroke-linejoin="miter"
@@ -323,10 +490,9 @@
             <a href="#platosTipicos">
                 <div class="columna">
                     <span class="svgServicios">
-
                             <svg style="display:inline-block;" xmlns="http://www.w3.org/2000/svg" x="0px"
                                 y="0px" width="80" height="80"
-                                viewBox="0 0 172 172" style="fill:#000000;">
+                                viewBox="0 0 172 172" >
                                 <g fill="none" fill-rule="nonzero" stroke="none"
                                     stroke-width="1" stroke-linecap="butt"
                                     stroke-linejoin="miter"
@@ -509,19 +675,16 @@
                                 </g>
                             </svg>
                         </span>
-
                     <h4>Platos típicos</h4>
                     <p>Los platos más deliciosos al rededor de 24 provincias que puedes encontrar y degustar lo encontrarás en esta sección. </p>
                 </div>
-
             </a>
             <a href="#frutas">
                 <div class="columna">
                     <span class="svgServicios">
-
                             <svg style="display:inline-block;" xmlns="http://www.w3.org/2000/svg" x="0px"
                                 y="0px" width="80" height="80"
-                                viewBox="0 0 172 172" style="fill:#000000;">
+                                viewBox="0 0 172 172" >
                                 <g fill="none" fill-rule="nonzero"
                                     stroke-width="1" stroke-linecap="butt"
                                     stroke-linejoin="miter"
@@ -788,35 +951,44 @@
             </a>
         </div>
     </section>
-    <div style="clear: both;">
-        <br>
-
-
-        <div class="tituloServicios">
-            <p id="platosTipicos">Platos típicos</p>
-        </div><br>
-        <div class="containerImg">
-            <img src="img/encebollados.jpg" class="imagenBlock" title="encebollado" alt="encebollado">
-            <img src="img/hornado.jpg" class="imagenBlock" title="hornado" alt="hornado">
-            <img src="img/cuy.jpg" class="imagenBlock" title="cuy" alt="cuy">
-
-            <img src="img/yapingacho.jpg" class="imagenBlock" title="yapingacho" alt="yapingacho">
-            <img src="img/tilapia.png" class="imagenBlock" title="tilapia" alt="tilapia">
-
-            <img src="img/cangrejada.jpeg" class="imagenBlock" title="cangrejada" alt="cangrejada">
-
-
-        </div>
-
-        <div style="clear: both;"><br> </div>
-
-    </div>
     <br>
-    <span class="form">
+    <div class="tituloServicios">
+        <p id="platosTipicos">Platos típicos</p>
+    </div><br>
+    <div id="galeriaImagenes">
+        <figure>
+            <img src="img/cangrejada.jpeg" alt="cangrejada">
+            <figcaption>Cangrejada o sopa marinera - Costa</figcaption>
+        </figure>
+        <figure>
+            <img src="img/cuy.jpg" alt="cuy">
+            <figcaption>Cuy asado - Sierra</figcaption>
+        </figure>
+        <figure>
+            <img src="img/hornado.jpg" alt="hornado">
+            <figcaption>Hornado de cerdo - Oriente</figcaption>
+        </figure>
+        <figure>
+            <img src="img/encebollados.jpg" alt="encebollado">
+            <figcaption>Encebollado - Costa</figcaption>
+        </figure>
+        <figure>
+            <img src="img/tilapia.png" alt="tilapia">
+            <figcaption>Tilapia frita - Oriente</figcaption>
+        </figure>
+        <figure>
+            <img src="img/yapingacho.jpg" alt="yapingacho">
+            <figcaption>Yapingacho - Machala</figcaption>
+        </figure>
+    </div>
+    <div style="clear:both"><br></div><br>
+
+    <p class="form">
         <a href="TenemeaNeysserformulario.html">
-            <strong> <h4><em>¿Necesitas cotizar un evento gastronómico? </em> &nbsp; ¡Comunícanos!</h4></strong>
+            ¿Necesitas cotizar un evento gastronómico?  &nbsp; ¡Comunícanos!
         </a>
-    </span>
+
+    </p>
     <br><br>
     <!-- Footer -->
     <footer class="bg-black">
@@ -828,6 +1000,7 @@
         </div>
     </footer>
     <script src="./bundle.js"></script>
+    <script src="js/Pagina1-Tenemea.js"></script>
 </body>
 
 </html>
