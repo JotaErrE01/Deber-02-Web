@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles/PrincipalEstilos.css"/>
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Formulario de Reserva de Viajes</title>
+    <style>
+        .submit button:hover{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <header class="bg-black p-2">
+            <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
+                <a href="BayasMarcos.html" class="flex items-center">
+                    <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
+                    <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
+                </a>
+    
+                <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
+    
+                <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="RuizJonathan.html">Vuelos</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="DavilaJose.html">Hoteles</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="RonquilloVanessa.html">Reserva de Autos</a>
+                    <a class="hover:text-orange-500 text-lg sm:text-base" href="TenemeaNeysser.html">Gastronomia</a>
+                </nav>
+            </div>
+        </header>
+            
+    </div>
+
+     <!-- Formulario -->
+    <section class="formu" id="formul">
+        <div class="formulario">
+            <h3>RESERVA TU VIAJE AHORA</h3>
+        </div>
+        <form name="f" id="lario">
+            <div class="field">
+                <label for="nombres">Nombres</label>
+                <input id="nombres" type="text" name="nombre"> 
+                <p></p>
+            </div>
+                <div class="field">
+                    <label for="apellidos">Apellidos</label>
+                    <input id="apellidos" type="text" name="apellido"> 
+                    <p></p>
+                </div>
+            
+            <div class="field">
+                <label for="destino">Destino</label>
+                <select id="destino">
+                    <option value="0" selected disabled >Selecione</option>
+                   <option>Quito</option> 
+                   <option>Cuenca</option> 
+                   <option>Baños</option> 
+                   <option>Guayaquil</option> 
+                   <option>Galápagos</option> 
+                </select>
+                <p></p>
+            </div>
+            <div class="field">
+                <label for="fecha">Fecha del viaje</label>
+                <input id="fecha" type="date" name="fecha"> 
+                <p></p>              
+            </div>
+            <div class="field">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="Email" placeholder="ej. minombre@gmail.com"> 
+                <p></p>              
+            </div>           
+            <div class="field">
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" type="number" name="telefono" placeholder="09- --- ----"> 
+                <p></p>               
+            </div>
+            <div class="textbox">
+                <label>Sugerencias (opcional)</label>
+                <textarea></textarea>
+            </div>
+            <div class="informacion">
+                <label >¿Quieres recibir información de Viajes?</label>
+                <div>
+                    <input type="radio" name="informacion" value="si">Si
+                    <p></p> 
+                </div>
+               <div>
+                   <input  type="radio" name="informacion" value="no">No
+                  
+                </div>
+                
+                          
+            </div>
+            <div class="privacidad" >
+                <input id="priva" type="checkbox" name="terminos">
+                <p></p>
+                <label>He leído y acepto la política de privacidad</label>              
+            </div>
+            <div class="submit">
+                <button>ENVIAR</button>
+            </div>
+        </form> 
+        
+        <script src="js/BayasMarcos.js"></script>
+
+         <!-- validacion de radiobutton -->
+        <script>
+            (function(){
+                var formulario =document.getElementsByName("f")[0];
+                    elementos = formulario.elements,
+                    boton = document.getElementsByClassName("submit");
+                
+                var validarRadio = function(e){
+                    if(f.informacion[0].checked == true || f.informacion[1].checked == true){
+                       
+                    }else{
+                        alert("Completa el campo ¿Quieres recibir informacion de viajes SI/NO?")
+                    }
+                };
+                var validarCheckbox = function(e){
+                    if(f.terminos.checked == false){
+                        alert("Acepta la politica de privacidad")  
+                    }
+                    
+                };
+
+                var validar = function(e){
+                    validarRadio(e);
+                    validarCheckbox(e);
+                }
+                formulario.addEventListener("submit", validar);
+
+            }())
+        </script>
+        
+    </section>
+
+
+
+    <footer class="bg-black">
+        <div class="container mx-auto flex items-center justify-center flex-col p-2">
+            <a href="/" class="text-white">
+                <i class="text-3xl fas fa-plane-departure"></i>
+            </a>
+            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
+        </div>
+    </footer>
+    <script src="./bundle.js"></script> 
+</body>
+</html>
