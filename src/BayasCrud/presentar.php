@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styles/PrincipalEstilos.css"/>
     <link rel="stylesheet" href="../styles/style.css">
-    <title>CRUD</title>
+    <title>Reservaciones CRUD</title>
     <style>
             .tabla{
                 margin: 35px auto;
@@ -17,13 +17,13 @@
             }
             table {
                 border: #b2b2b2 0.5px solid;
-                
+                margin: 0 auto;
+                text-align: center;  
             }
             td, th {
                 border: #b2b2b2 0.5px solid;
                 height: 50px;
-                padding: 10px;
-                
+                padding: 15px;  
             }
             thead{
                 background-color: #ED8600;
@@ -71,7 +71,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>USUARIO</th>
                         <th>NOMBRE Y APELLIDO</th>
                         <th>DESTINO</th>
@@ -87,7 +86,6 @@
                     while ($fila = mysqli_fetch_assoc($resultado)) {
                         ?>
                         <tr>
-                            <td><?php echo $fila['id'] ?></td>
                             <td><?php echo $fila['usuario'] ?></td>
                             <td><?php echo $fila['nombre'] ?></td>
                             <td><?php echo $fila['destino'] ?></td>

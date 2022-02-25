@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styles/PrincipalEstilos.css"/>
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Formulario de Reserva de Viajes</title>
+    <title>Eliminación de Reservaciones</title>
     <style>
         
     </style>
