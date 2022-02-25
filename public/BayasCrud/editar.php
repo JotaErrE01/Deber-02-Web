@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styles/PrincipalEstilos.css"/>
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Document</title>
+    <title>Actualización de Reservaciones</title>
    
 </head>
 <body>
@@ -57,10 +57,7 @@ if (isset($_GET['id'])) {
             <h3>Actualización de Reservas</h3>
             <form method="post">
                 <input type="hidden" name="id2" value="<?php echo $fila['id'] ?>">
-                <div class="field">
-                    <label>Id:</label>
-                    <input type="number" name="id" readonly value="<?php echo $fila['id'] ?>">
-                </div>
+    
                 <div class="field">
                     <label>Usuario:</label>
                     <input type="text" name="usuario" value="<?php echo $fila['usuario'] ?>">
@@ -109,30 +106,31 @@ if (isset($_GET['id'])) {
 ?>
 
 <?php
-if (!empty($_POST['id']) && !empty($_POST['usuario']) && !empty($_POST['nombre']) && 
-!empty($_POST['contraseña']) && !empty($_POST['lugar']) && !empty($_POST['fecha']) && !empty($_POST['email']) && !empty($_POST['email'])) {
-    $idp = htmlentities($_POST['id']);
-    $usuario = htmlentities($_POST['usuario']);
-    $nombre = htmlentities($_POST['nombre']);
-    $contraseña = htmlentities($_POST['contraseña']);
-    $lugar = htmlentities($_POST['lugar']);
-    $fecha = htmlentities($_POST['fecha']);
-    $email = htmlentities($_POST['email']);
-    $telefono = htmlentities($_POST['telefono']);
- 
+        if (!empty($_POST['usuario']) && !empty($_POST['nombre']) && 
+        !empty($_POST['contraseña']) && !empty($_POST['lugar']) && !empty($_POST['fecha']) && !empty($_POST['email']) && !empty($_POST['email'])) {
+        
+            $idp = htmlentities($_POST['id2']);
+            $usuario = htmlentities($_POST['usuario']);
+            $nombre = htmlentities($_POST['nombre']);
+            $contraseña = htmlentities($_POST['contraseña']);
+            $lugar = htmlentities($_POST['lugar']);
+            $fecha = htmlentities($_POST['fecha']);
+            $email = htmlentities($_POST['email']);
+            $telefono = htmlentities($_POST['telefono']);
+        
 
-    $sql2 = "update reserva set id =$idp, usuario ='$usuario', nombre = '$nombre', contraseña = '$contraseña',"
-            . " destino = '$lugar', fecha_viaje = '$fecha', email = '$email', telefono=  '$telefono'  where id=$idp";
+            $sql2 = "update reserva set id =$idp, usuario ='$usuario', nombre = '$nombre', contraseña = '$contraseña',"
+                    . " destino = '$lugar', fecha_viaje = '$fecha', email = '$email', telefono=  '$telefono'  where id=$idp";
 
-    if (mysqli_query($con, $sql2)) {
-        // echo "Registro ingresado correctamente";
-        //header("location:presentar.php"); //redireccionar
-        echo '<script>window.location="presentar.php"</script>';
-    } else {
-        echo "Error: " . $sql2 . "" . mysqli_error($con);
-    }
-}
-?>
+            if (mysqli_query($con, $sql2)) {
+                // echo "Registro ingresado correctamente";
+                //header("location:presentar.php"); //redireccionar
+                echo '<script>window.location="presentar.php"</script>';
+            } else {
+                echo "Error: " . $sql2 . "" . mysqli_error($con);
+            }
+        }
+    ?>
 <footer class="bg-black">
         <div class="container mx-auto flex items-center justify-center flex-col p-2">
             <a href="/" class="text-white">

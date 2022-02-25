@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../styles/PrincipalEstilos.css"/>
     <link rel="stylesheet" href="../styles/style.css">
-    <title>Formulario de Reserva de Viajes</title>
+    <title>Formulario de Reservaciones</title>
     
 </head>
 <body>
@@ -44,30 +44,23 @@
             <!-- Formulario -->
             <form method="post" id="lario">
             <div class="field">
-                <label for="id">ID</label>
-                <input  type="number" name="id"> 
-                <p></p>
-            </div>
-            
-            <div class="field">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario"> 
+                <input type="text" name="usuario" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="nombre">Nombre y Apellido</label>
-                <input  type="text" name="nombre"> 
+                <input  type="text" name="nombre" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña"> 
+                <input type="password" name="contraseña" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="lugar">Destino</label>
-                <select name="lugar">
-                    <option selected disabled >Selecione</option>
+                <select name="lugar" required>
                    <option>Quito</option> 
                    <option>Cuenca</option> 
                    <option>Baños</option> 
@@ -78,19 +71,20 @@
             </div>
             <div class="field">
                 <label for="fecha">Fecha del viaje</label>
-                <input  type="date" name="fecha"> 
+                <input  type="date" name="fecha" required> 
                 <p></p>              
             </div>
             <div class="field">
                 <label for="email">E-mail</label>
-                <input  type="email" name="email" placeholder="ej. minombre@gmail.com"> 
+                <input  type="email" name="email" placeholder="ej. minombre@gmail.com" required> 
                 <p></p>              
             </div>           
             <div class="field">
                 <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" placeholder="09- --- ----"> 
+                <input type="text" name="telefono" placeholder="09- --- ----" required> 
                 <p></p>               
             </div>
+            
             <div class="submit">
                 <button>AGREGAR</button>
             </div>
@@ -100,13 +94,11 @@
     <?php
 	// incluir archivo conexion.php
 	require_once 'conexion.php';
-	if (!empty($_POST['id']) && !empty($_POST['usuario']) &&
+	if (!empty($_POST['usuario']) &&
 			 !empty($_POST['nombre']) && !empty($_POST['contraseña']) && !empty($_POST['lugar'])
 			 && !empty($_POST['fecha']) && !empty($_POST['email']) &&
 			 !empty($_POST['telefono'])) {
-               
-
-		$id = htmlentities($_POST['id']);
+        
 		$usuario = htmlentities($_POST['usuario']);
 		$nombre = htmlentities($_POST['nombre']);
 		$contraseña = htmlentities($_POST['contraseña']);
@@ -115,8 +107,8 @@
 		$email = isset($_POST['email']) ? htmlentities($_POST['email']) : '';
 		$telefono = htmlentities($_POST['telefono']);
 
-		$sql = "insert into reserva(id, usuario, nombre, contraseña, destino, fecha_viaje, email, telefono) "
-				. "values($id,'$usuario','$nombre','$contraseña','$lugar','$fecha','$email','$telefono')";
+		$sql = "insert into reserva(usuario, nombre, contraseña, destino, fecha_viaje, email, telefono) "
+				. "values('$usuario','$nombre','$contraseña','$lugar','$fecha','$email','$telefono')";
 
 		if (mysqli_query($con, $sql)) {// si se ejecuto sin errores
 			//header("location:presentar.php"); //redireccionar
