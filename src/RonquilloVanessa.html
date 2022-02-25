@@ -5,25 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de reserva de autos" />
+    <meta name="author" content="Vanessa Ronquillo" />
+    <meta name="keywords" content="Renta de carros Guayaquil, Car rent, GYE" />
     <title>Reserva de autos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="styles/EstilosAutos.css">
-        <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/EstilosAutos.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .contenedor-Introduccion {
+            background-size: 100vw;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 25%;
+        }
+
+        .contenedor-h1-introduccion {
+            margin: 1rem;
+            height: 3.75rem;
+        }
+
+        h1.Introduccion-descripcion {
+            font-size: 2.2rem;
+            color: #ED8600;
+            font-style: italic;
+            line-height: 2rem;
+        }
+    </style>
 </head>
 
 <body>
     <header class="bg-black p-2">
         <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
-            <a href="BayasMarcos.html" class="flex items-center">
+            <a href="index.html" class="flex items-center">
                 <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
                 <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
             </a>
 
             <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
 
-            <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
+            <nav id="nav"
+                class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
                 <a class="hover:text-orange-500 text-lg sm:text-base" href="RuizJonathan.html">Vuelos</a>
                 <a class="hover:text-orange-500 text-lg sm:text-base" href="DavilaJose.html">Hoteles</a>
                 <a class="hover:text-orange-500 text-lg sm:text-base" href="RonquilloVanessa.html">Reserva de Autos</a>
@@ -34,7 +61,8 @@
 
     <div class="contenedor-Introduccion">
         <div class="contenedor-h1-introduccion">
-            <h1 class="Introduccion-descripcion">Disfruta de tu viaje <br> Las mejores ofertas de alquiler <br>de vehículos
+            <h1 class="Introduccion-descripcion">Disfruta de tu viaje <br> Las mejores ofertas de alquiler <br>de
+                vehículos
                 aquí</h1>
         </div>
         <div class="contenedor-h1-introduccion">
@@ -52,47 +80,54 @@
                             <a href="" class="a-noticias">Multa de $112 por estacionarse doble columna </a>
                         </div>
                         <div class="elementos-noticias">
-                            <a href="" class="a-noticias">¿Tiene su vehículo disponible?. Trabaje con nosotros.  </a>
+                            <a href="" class="a-noticias">¿Tiene su vehículo disponible?. Trabaje con nosotros. </a>
                         </div>
                         <div class="elementos-noticias">
-                            <a href="" class="a-noticias">Policias custodian a los turistas en Aeropuerto de Guayaquil</a>
-                        </div><div class="elementos-noticias">
-                            <a href="" class="a-noticias">Desde hoy multa de sueldo básico por invadir carril de Metrovía</a>
+                            <a href="" class="a-noticias">Policias custodian a los turistas en Aeropuerto de
+                                Guayaquil</a>
+                        </div>
+                        <div class="elementos-noticias">
+                            <a href="" class="a-noticias">Desde hoy multa de sueldo básico por invadir carril de
+                                Metrovía</a>
                         </div>
                     </div>
                 </section>
                 <section>
                     <h4 class="titulos-seccion"> Formulario de reserva</h4>
-                        <div id="contenedor-reserva">
-                            <div class="elemento-contenedor-reserva">
-                                <p>Reserva ahora uno de nuestros carros</p>
-                            </div>
-                            <div class="elemento-contenedor-reserva">
-                                <a href="FormReservaAuto.html" class="btns reserva"> Reserva Aquí</a>
-                            </div>
-                            
+                    <div id="contenedor-reserva">
+                        <div class="elemento-contenedor-reserva">
+                            <p>Reserva ahora uno de nuestros carros</p>
                         </div>
-    
+                        <div class="elemento-contenedor-reserva">
+                            <a href="FormReservaAuto.html" class="btns reserva"> Reserva Aquí</a>
+                        </div>
+
+                    </div>
+
                 </section>
             </div>
         </aside>
         <main>
             <div class="contenedor-main">
-    
-    
+
+
                 <section class="contenedorm">
                     <h2 class="titulos-seccion">Nuestro servicio</h2>
                     <div class="contenedorm-nuestro-servicio">
-                        <img src="./img/nuestro-servicio-renta.jpg" alt="manos con llaves de carro" id="img-nuestro-servicio">
+                        <img src="./img/nuestro-servicio-renta.jpg" alt="manos con llaves de carro"
+                            id="img-nuestro-servicio" style="border-radius: 3px; width: 50%; height: auto;">
                         <ul class="ulista">
-                            <li class="contenido-textos">Automóviles de alquiler para cortos o largos períodos de tiempo.
+                            <li class="contenido-textos">Automóviles de alquiler para cortos o largos períodos de
+                                tiempo.
                             </li>
-                            <li class="contenido-textos">Nuestro alquiler de autos te permitirá disfrutar del recorrido en
+                            <li class="contenido-textos">Nuestro alquiler de autos te permitirá disfrutar del recorrido
+                                en
                                 las
                                 carreteras del país.</li>
-                            <li class="contenido-textos">Tenemos diferentes opciones, que se acomodan a tus necesidades</li>
+                            <li class="contenido-textos">Tenemos diferentes opciones, que se acomodan a tus necesidades
+                            </li>
                         </ul>
-    
+
                     </div>
                     <a href="" class="btns"></a>
                 </section>
@@ -140,53 +175,53 @@
                         <div class="contenedor-btndirectorio">
                             <a href="" class="btns directorio"> Ver más +</a>
                         </div>
-                        
+
                     </div>
                 </section>
                 <section class="contenedorm">
                     <h2 class="titulos-seccion">Consejos para alquilar un auto</h2>
                     <div class="contenedor-consejos">
-                        
-                            <div class="col-2">
-                                <h4 class="nombre-cat">RUTAS</h4>
-                                <blockquote
-                                    cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
-                                    <p class="textblock">Guayaquil ofrece una gran oportunidad para disfrutar de una ruta en
-                                        coche. Desde la Perla del Pacífico, como se conoce a la ciudad, puedes viajar hasta
-                                        Playas Villamil, a 90 km, Montañita, a dos horas y media en coche, o Puerto López, e
-                                        iniciar desde allí la ruta del Spondylus, subiendo hasta Esmeraldas durante 520 km
-                                        de costa. También puedes apostar por visitar el parque nacional del Cajas, a 4.000 m
-                                        de altura, y Cuenca, a 180 km de Guayaquil, o, incluso, realizar la ruta de los
-                                        volcanes, a 200 km.</p>
-                                </blockquote>
-                            </div>
-                            <div class="col-2">
-                                <h4 class="nombre-cat">TRAFICO DE GUAYAQUIL</h4>
-                                <blockquote
-                                    cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
-                                    <p class="textblock">El tráfico de Guayaquil, como en la mayoría de las grandes urbes,
-                                        se congestiona en las horas punta. Las franjas horarias más complicadas van de 7:30
-                                        a 9:30 y de 17:30 a 20:00, sobre todo, en calles céntricas, como la avenida Carlos
-                                        Julio Arosemena, Víctor Emilio Estrada, el bulevar 9 de Octubre o las avenidas Quito
-                                        y Machala. Además, el puente de la Unidad Nacional, que une Samborondón y Durán con
-                                        la ciudad, se congestiona durante la mañana en dirección a Guayaquil y, por las
-                                        tardes, en sentido contrario </p>
-                                </blockquote>
-                            </div>
-                            <div class="col-2">
-                                <h4 class="nombre-cat">¿VIENES A GUAYAQUIL? </h4>
-                                <blockquote
-                                    cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
-                                    <p class="textblock">Para conducir por Guayaquil, debes saber que circulan muchas motos
-                                        entre los coches con conductas imprudentes y la mayoría de los peatones no respetan
-                                        las señalizaciones para cruzar la calzada. La forma de conducir de los locales es
-                                        bastante agresiva y, sobre todo en las carreteras secundarias, verás adelantamientos
-                                        sin importar las señalizaciones e, incluso, por el arcén. </p>
-                                </blockquote>
-                            </div>
-                        
+
+                        <div class="col-2" id="rutas">
+                            <h4 class="nombre-cat">RUTAS</h4>
+                            <blockquote
+                                cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
+                                <p class="textblock">Guayaquil ofrece una gran oportunidad para disfrutar de una ruta en
+                                    coche. Desde la Perla del Pacífico, como se conoce a la ciudad, puedes viajar hasta
+                                    Playas Villamil, a 90 km, Montañita, a dos horas y media en coche, o Puerto López, e
+                                    iniciar desde allí la ruta del Spondylus, subiendo hasta Esmeraldas durante 520 km
+                                    de costa. También puedes apostar por visitar el parque nacional del Cajas, a 4.000 m
+                                    de altura, y Cuenca, a 180 km de Guayaquil, o, incluso, realizar la ruta de los
+                                    volcanes, a 200 km.</p>
+                            </blockquote>
+                        </div>
+                        <div class="col-2" id="trafico">
+                            <h4 class="nombre-cat">TRAFICO DE GUAYAQUIL</h4>
+                            <blockquote
+                                cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
+                                <p class="textblock">El tráfico de Guayaquil, como en la mayoría de las grandes urbes,
+                                    se congestiona en las horas punta. Las franjas horarias más complicadas van de 7:30
+                                    a 9:30 y de 17:30 a 20:00, sobre todo, en calles céntricas, como la avenida Carlos
+                                    Julio Arosemena, Víctor Emilio Estrada, el bulevar 9 de Octubre o las avenidas Quito
+                                    y Machala. Además, el puente de la Unidad Nacional, que une Samborondón y Durán con
+                                    la ciudad, se congestiona durante la mañana en dirección a Guayaquil y, por las
+                                    tardes, en sentido contrario </p>
+                            </blockquote>
+                        </div>
+                        <div class="col-2" id="Guayaquil">
+                            <h4 class="nombre-cat">¿VIENES A GUAYAQUIL? </h4>
+                            <blockquote
+                                cite="https://www.es.kayak.com/Renta-economica-de-autos-Guayaquil.20093.cars.ksp?gclid=Cj0KCQiAweaNBhDEARIsAJ5hwbdc40Q4x4_lrX_e_XTBdEb5kfhm3Qgu_BIwo1q88g5hdYX_-aUt-cAaAkCBEALw_wcB&g_kw=renta+de+carros+baratos">
+                                <p class="textblock">Para conducir por Guayaquil, debes saber que circulan muchas motos
+                                    entre los coches con conductas imprudentes y la mayoría de los peatones no respetan
+                                    las señalizaciones para cruzar la calzada. La forma de conducir de los locales es
+                                    bastante agresiva y, sobre todo en las carreteras secundarias, verás adelantamientos
+                                    sin importar las señalizaciones e, incluso, por el arcén. </p>
+                            </blockquote>
+                        </div>
+
                     </div>
-    
+
                 </section>
                 <section class="contenedorm">
                     <h2 class="titulo-suscribirse">SUSCRÍBETE</h2>
@@ -199,8 +234,8 @@
         </main>
 
     </div>
- 
-    <footer class="bg-black" >
+
+    <footer class="bg-black">
         <div class="container mx-auto flex items-center justify-center flex-col p-2">
             <a href="/" class="text-white">
                 <i class="text-3xl fas fa-plane-departure"></i>
@@ -208,9 +243,64 @@
             <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
         </div>
     </footer>
-    <script src="./bundle.js" ></script>
+    <script src="./bundle.js"></script>
 
 
+    <script type="text/javascript">
+        //Aplicacion de DOM en imagenes de bienvenida
+        window.addEventListener('load', function () {
+            let slider = document.querySelector(".contenedor-Introduccion");
+            console.log(slider);
+            slider.style.backgroundImage = "url('./img/autopresentacion3.jpg')";
+            let images = ["./img/autopresentacion.jpg", "./img/autopresentacion2.jpg", "./img/autopresentacion3.jpg"];
+            let i = 0;
+            let tiempo = 3000;
+
+
+            function cambiarimg() {
+                slider.style.backgroundImage = "url('" + images[i] + "')";
+
+                if (i < 2) {
+                    i++;
+                } else {
+                    i = 0;
+                }
+            }
+            setInterval(cambiarimg, tiempo);
+        });
+
+        //Aplicacion de DOM en seccion "Consejos"
+        const consejos = document.querySelectorAll(".col-2");
+        let imgag;
+        for (let i = 0; i < consejos.length; i++) {
+            consejos[i].addEventListener('mouseover', function () {
+                console.log(consejos[i]);
+                imgag = document.createElement("img");
+                if (consejos[i].id === "rutas") {
+                    imgag.src = "./img/rutas.jpg";
+
+                } if (consejos[i].id === "trafico") {
+                    imgag.src = "./img/trafico.jpg";
+
+                } if (consejos[i].id === "Guayaquil") {
+                    imgag.src = "./img/guayaquilcons.jpg";
+                }
+
+                imgag.className = "imgagregada";
+                consejos[i].appendChild(imgag);
+
+            });
+
+            consejos[i].addEventListener('mouseout', function () {
+                imgag.remove();
+
+            });
+
+        }
+
+
+
+    </script>
 </body>
 
 </html>
