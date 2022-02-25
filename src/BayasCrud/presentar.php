@@ -11,14 +11,17 @@
     <link rel="stylesheet" href="../styles/style.css">
     <title>CRUD</title>
     <style>
+            .tabla{
+                margin: 35px auto;
+                width: 80%;
+            }
             table {
-                border: #b2b2b2 1px solid;
+                border: #b2b2b2 0.5px solid;
                 
             }
             td, th {
-                border: #b2b2b2 1px solid;
-                width: 170px;
-                height: 40px;
+                border: #b2b2b2 0.5px solid;
+                height: 50px;
                 padding: 10px;
                 
             }
@@ -50,8 +53,10 @@
             </div>
         </header>
             
-    </div>
-    
+    </div><br>
+    <div class="formulario">
+            <h3>-RESERVACIONES-</h3>
+    </div> 
         
      <!-- CONSULTAR -->   
     <?php  
@@ -61,7 +66,7 @@
         $resultado = mysqli_query($con, $sql);
         ?>
 
-        <div>
+        <div class="tabla">
           
             <table>
                 <thead>
@@ -92,7 +97,7 @@
                             <td>
                                 <a class="boton" href="editar.php?id=<?php echo $fila['id'] ?> " class="btn btn-o">Editar</a>
                                
-                                <a class="boton" href="presentar.php?id=<?php echo $fila['id'] ?>" class="btn btn-o">Eliminar</a>
+                                <a class="boton" href="eliminar.php?id=<?php echo $fila['id'] ?>" class="btn btn-o">Eliminar</a>
                                
                              <?php  
                                 ?>
@@ -103,65 +108,18 @@
                     <?php } ?>
                 </tbody>
             </table><br>
-            <a class="buton" href="Agregar.php">AGREGAR</a>
+            <a class="buton" href="Agregar.php">AGREGAR +</a>
             
         </div>
        
-       <!-- ELIMINAR -->
-       <?php
-        require_once 'conexion.php';
-     
-        if (!empty($_GET['id'])) {
-            $id = htmlentities($_GET['id']);
-            $sql = "select * from reserva where id = $id";
-            $resultado = mysqli_query($con, $sql);
-
-            while ($fila = mysqli_fetch_assoc($resultado)) {
-                ?>
-                <section class="formu" id="formul">
-                <div class="formulario">
-                <h3>Eliminación de Reservas</h3>
-                    <form method="post">
-                        <div class="field">
-                            <label>Id:</label>
-                            <input type="text" name="id" readonly value="<?php echo $fila['id'] ?>" readonly>
-                        </div>
-                        <div class="field">
-                            <label>Usuario:</label>
-                            <input type="text" name="usuario"  value="<?php echo $fila['usuario'] ?>" readonly>
-                        </div>
-                        <div class="field">
-                            <label>Nombres:</label>
-                            <input type="text" name="nombre"  value="<?php echo $fila['nombre'] ?>" readonly>
-                        </div>
-                        <div class="field">
-                            <label>Fecha de Viaje:</label>
-                            <input type="date" name="fecha"  value="<?php echo $fila['fecha_viaje'] ?>" readonly>
-                        </div>
-                        <div class="submit">
-                            <button>ELIMINAR</button>
-                        </div>
-                    </form>
-
-                </div>
-                </section>
-            <?php
-            }
-        }
-        ?>
-        <?php
-        if (isset($_POST['id']) && !empty($_POST['id'])) {
-            $id = htmlentities($_POST['id']);
-
-            $sql = "delete from reserva where id = $id ";
-
-          if(mysqli_query($con, $sql)){
-                 //header("location:presentar.php");
-                 echo '<script>window.location="presentar.php"</script>';
-              
-          }else{         
-          }
-        }
-        ?>
+        <footer class="bg-black">
+        <div class="container mx-auto flex items-center justify-center flex-col p-2">
+            <a href="/" class="text-white">
+                <i class="text-3xl fas fa-plane-departure"></i>
+            </a>
+            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
+        </div>
+    </footer>
+    <script src="./bundle.js"></script> 
 </body>
 </html>

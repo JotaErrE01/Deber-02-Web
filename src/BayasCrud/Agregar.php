@@ -45,29 +45,28 @@
             <form method="post" id="lario">
             <div class="field">
                 <label for="id">ID</label>
-                <input  type="number" name="id"> 
+                <input  type="number" name="id" required> 
                 <p></p>
             </div>
             
             <div class="field">
                 <label for="usuario">Usuario</label>
-                <input type="text" name="usuario"> 
+                <input type="text" name="usuario" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="nombre">Nombre y Apellido</label>
-                <input  type="text" name="nombre"> 
+                <input  type="text" name="nombre" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" name="contraseña"> 
+                <input type="password" name="contraseña" required> 
                 <p></p>
             </div>
             <div class="field">
                 <label for="lugar">Destino</label>
-                <select name="lugar">
-                    <option selected disabled >Selecione</option>
+                <select name="lugar" required>
                    <option>Quito</option> 
                    <option>Cuenca</option> 
                    <option>Baños</option> 
@@ -78,17 +77,17 @@
             </div>
             <div class="field">
                 <label for="fecha">Fecha del viaje</label>
-                <input  type="date" name="fecha"> 
+                <input  type="date" name="fecha" required> 
                 <p></p>              
             </div>
             <div class="field">
                 <label for="email">E-mail</label>
-                <input  type="email" name="email" placeholder="ej. minombre@gmail.com"> 
+                <input  type="email" name="email" placeholder="ej. minombre@gmail.com" required> 
                 <p></p>              
             </div>           
             <div class="field">
                 <label for="telefono">Teléfono</label>
-                <input type="text" name="telefono" placeholder="09- --- ----"> 
+                <input type="text" name="telefono" placeholder="09- --- ----" required> 
                 <p></p>               
             </div>
             <div class="submit">
