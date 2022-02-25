@@ -5,6 +5,7 @@ require_once '../conexion/db.php';
 class Vuelo {
     public $tabla = 'vuelos';
     public $db;
+    public $errores = [];
 
     public function __construct($args = []) {
         $this->db = conectarDB();
@@ -15,6 +16,7 @@ class Vuelo {
         $this->fecha_regreso = $args['fecha_regreso'] ?? null;
         $this->duracion = $args['duracion'] ?? null;
         $this->precio = $args['precio'] ?? null;
+        $this->tipoViaje = $args['tipoViaje'] ?? null;
     }
 
     public function getAll() {
@@ -39,14 +41,27 @@ class Vuelo {
     }
 
     public function insert() {
-        $sql = "INSERT INTO $this->tabla (origen, destino, fecha_salida, fecha_regreso, duracion, precio) VALUES ('$this->origen', '$this->destino', '$this->fecha_salida', '$this->fecha_regreso', '$this->duracion', '$this->precio')";
+        $sql = '';
+        if(empty($this->fecha_regreso)){
+            $sql = "INSERT INTO $this->tabla (ciudad_origen_id, ciudad_destino_id, fecha_salida, duracion, precio) VALUES ('$this->ciudad_origen_id', '$this->ciudad_destino_id', '$this->fecha_salida', '$this->duracion', '$this->precio')";
+        }else {
+            $sql = "INSERT INTO $this->tabla (ciudad_origen_id, ciudad_destino_id, fecha_salida, fecha_regreso, duracion, precio) VALUES ('$this->ciudad_origen_id', '$this->ciudad_destino_id', '$this->fecha_salida', '$this->fecha_regreso', '$this->duracion', '$this->precio')";
+        }
+
         $resultado = mysqli_query($this->db, $sql);
 
         return $resultado;
     }
 
-    public function update() {
-        $sql = "UPDATE $this->tabla SET origen = '$this->origen', destino = '$this->destino', fecha_salida = '$this->fecha_salida', fecha_regreso = '$this->fecha_regreso', duracion = '$this->duracion', precio = '$this->precio' WHERE id = $this->id";
+    public function update($id) {
+        $sql = '';
+        if($this->tipoViaje == '2'){
+            $this->fecha_regreso = 'null';
+            $sql = "UPDATE $this->tabla SET ciudad_origen_id = '$this->ciudad_origen_id', ciudad_destino_id = '$this->ciudad_destino_id', fecha_salida = '$this->fecha_salida', fecha_regreso = $this->fecha_regreso, duracion = '$this->duracion', precio = '$this->precio' WHERE id = $id";
+        }else {
+            $sql = "UPDATE $this->tabla SET ciudad_origen_id = '$this->ciudad_origen_id', ciudad_destino_id = '$this->ciudad_destino_id', fecha_salida = '$this->fecha_salida', fecha_regreso = '$this->fecha_regreso', duracion = '$this->duracion', precio = '$this->precio' WHERE id = $id";
+        }
+        
         $resultado = mysqli_query($this->db, $sql);
 
         return $resultado;
@@ -57,6 +72,51 @@ class Vuelo {
         $resultado = mysqli_query($this->db, $sql);
 
         return $resultado;
+    }
+
+    public function getErrores() {
+
+        if( empty($this->ciudad_origen_id) ) {
+            $this->errores[] = "La ciudad de origen es obligatoria";
+        }
+
+        if( empty($this->tipoViaje) ) {
+            $this->errores[] = "El tipo de viaje es obligatorio";
+        }
+
+        if( empty($this->ciudad_destino_id)) {
+            $this->errores[] = "La ciudad de destino es obligatoria";
+        }
+
+        if( $this->ciudad_origen_id == $this->ciudad_destino_id ) {
+            $this->errores[] = "La ciudad de origen no puede ser la misma que la ciudad de destino";
+        }
+
+        if( empty($this->fecha_salida) ) {
+            $this->errores[] = "La fecha de salida es obligatoria";
+        }
+
+        if( empty($this->fecha_regreso) && $this->tipoViaje == '1' ) {
+            $this->errores[] = "La fecha de regreso es obligatoria";
+        }
+
+        if( empty($this->duracion) ) {
+            $this->errores[] = "La duración es obligatoria";
+        }
+
+        if( empty($this->precio) ) {
+            $this->errores[] = "El precio es obligatorio";
+        }
+
+        if( !is_numeric($this->precio) ) {
+            $this->errores[] = "El precio debe ser un número";
+        }
+
+        if( !is_numeric($this->duracion) ) {
+            $this->errores[] = "La duración debe ser un número";
+        }
+
+        return $this->errores;
     }
 
 }

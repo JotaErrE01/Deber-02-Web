@@ -1,3 +1,20 @@
+<?php 
+    require __DIR__ . '/Vuelo.php';
+    $errores = [];
+    
+    if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+        $vueloObj = new Vuelo($_POST);
+
+        // Validar los datos
+        $errores = $vueloObj->getErrores();
+        if(sizeof($errores) == 0) {
+            $vueloObj->insert();
+            header('Location: adminVuelos.php');
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +42,7 @@
                 include './layout/formLayout.php';
             ?>
 
-            <button type="submit" class="border-emerald-500 border-2 border-solid hover:bg-emerald-500 hover:text-white hover:font-bold text-center px-3 py-2 rounded-md text-xl text-emerald-600 w-80 mx-auto my-10 leading-normal" id="buscar">Guardar Vuelo</button>
+            <button type="submit" class="border-emerald-500 border-2 border-solid hover:bg-emerald-500 hover:text-white hover:font-bold text-center px-3 py-2 rounded-md text-xl text-emerald-600 w-80 mx-auto leading-normal my-10" id="buscar">Guardar Vuelo</button>
         </form>
     </section>
 
@@ -33,7 +50,7 @@
     <?php
     include '../templates/footer.php';
     ?>
-    <script src="/js/RuizJonathanValidacion.js"></script>
+    <script src="/js/adminPanel.js"></script>
 </body>
 
 </html>

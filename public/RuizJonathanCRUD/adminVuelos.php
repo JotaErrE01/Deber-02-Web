@@ -22,7 +22,7 @@
         <!-- <img class="mx-auto rounded-lg" src="https://cdn.pixabay.com/photo/2017/06/05/11/01/airport-2373727_960_720.jpg" alt="vuelos"> -->
 
         <div class="w-4/5 flex justify-center mx-auto md:justify-start my-5">
-            <a href="crearVuelo.php" class="block w-fit p-2 border-emerald-600 border-solid border-2 text-emerald-700 hover:text-white hover:bg-emerald-600 rounded-lg">Crear un Nuevo Vuelo</a>
+            <a href="crearVuelo.php" class="block w-fit p-2 border-emerald-600 border-solid border-2 text-emerald-700 hover:text-white hover:bg-emerald-600 rounded-lg hover:font-bold font-semibold">Crear un Nuevo Vuelo</a>
         </div>
 
         <div class="md:grid-cols-2 md:w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center gap-5 my-10">
@@ -43,7 +43,7 @@
                     <div class="vuelos-info">
                         <h3 class="text-3xl font-medium my-2"><?php echo "{$origen} a {$destino}" ?></h3>
                         <p class="my-5 text-left text-lg">Salida: <?php echo $fechaSalida ?></p>
-                        <p class="my-5 text-left text-lg">Regreso: <?php echo isset($fechaRegreso) ?  $fechaRegreso : 'N/A' ?> </p>
+                        <p class="my-5 text-left text-lg">Regreso: <?php echo isset($fechaRegreso) ?  $fechaRegreso : 'No Aplica' ?> </p>
                         <p class="my-5 text-left text-lg">Duración: <?php echo $duracion ?> </p>
                         <p class="my-5 text-right text-xl"><span class="font-bold text-2xl">USD <?php echo $precio ?></span> <?php echo isset($fechaRegreso) ?  'ida y vuelta' : 'solo ida' ?></p>
                     </div>

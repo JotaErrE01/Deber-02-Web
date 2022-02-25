@@ -1,6 +1,18 @@
 <?php 
     require __DIR__ . '/Vuelo.php';
+    $errores = [];
     $vuelo;
+
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $vueloObj = new Vuelo($_POST);
+
+        // Validar los datos
+        $errores = $vueloObj->getErrores();
+        if(sizeof($errores) == 0) {
+            $vueloObj->update($_GET['id']);
+            header('Location: adminVuelos.php');
+        }
+    }
 
     if(isset($_GET['id'])){
         $id = filter_var( $_GET['id'], FILTER_VALIDATE_INT );
@@ -53,7 +65,7 @@
     <?php
     include '../templates/footer.php';
     ?>
-    <script src="/js/RuizJonathanValidacion.js"></script>
+    <script src="/js/adminPanel.js"></script>
 </body>
 
 </html>
