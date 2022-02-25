@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `reserva`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reserva` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `usuario` varchar(45) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `contraseña` varchar(45) DEFAULT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE `reserva` (
   `email` varchar(45) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `reserva` (
 
 LOCK TABLES `reserva` WRITE;
 /*!40000 ALTER TABLE `reserva` DISABLE KEYS */;
-INSERT INTO `reserva` VALUES (2,'Joel34','Joel Mero','20478','Quito','2022-04-08','joel@gmail.com','0987456314'),(3,'andres69','Andres Mero','424234','Ba&ntilde;os','2022-04-30','andres@hotmail.com','0987456314'),(5,'May2003','Maybeth Jimenez','12123','Gal&aacute;pagos','2022-05-07','may@gmail.com','0987321544');
+INSERT INTO `reserva` VALUES (3,'Joel34','Joel Mero','tyur','Guayaquil','2022-04-30','joel@gmail.com','0998754879'),(4,'Juan64','Juan Mendez','gf45','Quito','2022-05-05','juan@gmail.com','0985236986'),(5,'Marcos95','Marcos','45','Ba&ntilde;os','2022-02-06','davidbayas95@hotmail.com','0987456314');
 /*!40000 ALTER TABLE `reserva` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-24 15:21:37
+-- Dump completed on 2022-02-25 12:18:00
