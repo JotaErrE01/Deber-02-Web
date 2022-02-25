@@ -12,27 +12,10 @@
     <title>Formulario de Reservaciones</title>
     
 </head>
-<body>
-    <div id="contenedor">
-        <header class="bg-black p-2">
-            <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
-                <a href="../index.html" class="flex items-center">
-                    <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
-                    <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
-                </a>
-    
-                <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
-    
-                <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../RuizJonathan.html">Vuelos</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../DavilaJose.html">Hoteles</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../RonquilloVanessa.html">Reserva de Autos</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../TenemeaNeysser.html">Gastronomia</a>
-                </nav>
-            </div>
-        </header>
-            
-    </div><br>
+<?php
+    include '../templates/header.php';
+    ?>
+    <br>
     <div class="reservas">
         <nav>
             <a href="presentar.php">Reservaciones</a>
@@ -93,7 +76,8 @@
     </section>
     <?php
 	// incluir archivo conexion.php
-	require_once 'conexion.php';
+	require_once '../conexion/db.php';
+    
 	if (!empty($_POST['usuario']) &&
 			 !empty($_POST['nombre']) && !empty($_POST['contraseña']) && !empty($_POST['lugar'])
 			 && !empty($_POST['fecha']) && !empty($_POST['email']) &&
@@ -110,25 +94,20 @@
 		$sql = "insert into reserva(usuario, nombre, contraseña, destino, fecha_viaje, email, telefono) "
 				. "values('$usuario','$nombre','$contraseña','$lugar','$fecha','$email','$telefono')";
 
-		if (mysqli_query($con, $sql)) {// si se ejecuto sin errores
+		if (mysqli_query(conectarDB(), $sql)) {// si se ejecuto sin errores
 			//header("location:presentar.php"); //redireccionar
            echo '<script>window.location="presentar.php"</script>';
 		} else {
-			echo "Error: " . $sql . "" . mysqli_error($con);
+			echo "Error: " . $sql . "" . mysqli_error(conectarDB());
 		}
 	}
     
     
 	?>
+    <?php
+    include '../templates/footer.php';
+    ?>
     
-    <footer class="bg-black">
-        <div class="container mx-auto flex items-center justify-center flex-col p-2">
-            <a href="/" class="text-white">
-                <i class="text-3xl fas fa-plane-departure"></i>
-            </a>
-            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
-        </div>
-    </footer>
-    <script src="./bundle.js"></script> 
+    
 </body>
 </html>

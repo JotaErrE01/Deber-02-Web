@@ -13,7 +13,7 @@
     <style>
             .tabla{
                 margin: 35px auto;
-                width: 80%;
+                width: 100%;
             }
             table {
                 border: #b2b2b2 0.5px solid;
@@ -22,7 +22,7 @@
             }
             td, th {
                 border: #b2b2b2 0.5px solid;
-                height: 50px;
+                height: 10px;
                 padding: 15px;  
             }
             thead{
@@ -34,36 +34,20 @@
 </head>
 <body>
 
-<div id="contenedor">
-        <header class="bg-black p-2">
-            <div class="container flex items-center flex-col sm:flex-row justify-between mx-auto text-white">
-                <a href="../index.html" class="flex items-center">
-                    <h1 class="my-2 text-4xl sm:ml-0 sm:text-title sm:leading-none ">EcuTravel</h1>
-                    <i class="fas fa-plane-departure text-2xl sm:text-logo ml-2"></i>
-                </a>
-    
-                <i id="bar" class="block text-3xl sm:hidden fas fa-bars"></i>
-    
-                <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../RuizJonathan.html">Vuelos</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../DavilaJose.html">Hoteles</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../RonquilloVanessa.html">Reserva de Autos</a>
-                    <a class="hover:text-orange-500 text-lg sm:text-base" href="../TenemeaNeysser.html">Gastronomia</a>
-                </nav>
-            </div>
-        </header>
-            
-    </div><br>
+    <?php
+        include '../templates/header.php';
+    ?>
+    <br>
     <div class="formulario">
             <h3>-RESERVACIONES-</h3>
     </div> 
         
      <!-- CONSULTAR -->   
     <?php  
-        require_once 'conexion.php';
+       require_once '../conexion/db.php';
         
         $sql = "select * from reserva";
-        $resultado = mysqli_query($con, $sql);
+        $resultado = mysqli_query(conectarDB(), $sql);
         ?>
 
         <div class="tabla">
@@ -110,14 +94,8 @@
             
         </div>
        
-        <footer class="bg-black">
-        <div class="container mx-auto flex items-center justify-center flex-col p-2">
-            <a href="/" class="text-white">
-                <i class="text-3xl fas fa-plane-departure"></i>
-            </a>
-            <p class="text-white text-sm">Todos los Derechos Reservados EcuTravel &copy;</p>
-        </div>
-    </footer>
-    <script src="./bundle.js"></script> 
+        <?php
+            include '../templates/footer.php';
+        ?> 
 </body>
 </html>

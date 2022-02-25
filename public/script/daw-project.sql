@@ -25,7 +25,7 @@ CREATE TABLE `ciudades` (
 
 DROP TABLE IF EXISTS `reserva`;
 CREATE TABLE `reserva` (
-  `id` int(11) NOT NULL,
+  `id` int(11)  NOT NULL AUTO_INCREMENT,
   `usuario` varchar(45) DEFAULT NULL,
   `nombre` varchar(45) DEFAULT NULL,
   `contraseña` varchar(45) DEFAULT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `reserva` (
   `email` varchar(45) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `vehiculo`;
 CREATE TABLE `vehiculo` (
