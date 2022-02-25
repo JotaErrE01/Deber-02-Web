@@ -10,16 +10,23 @@ const $inputOpinion = document.querySelector('textarea');
 
 const iniciarApp = () => {
     $formualrioVuelos.addEventListener('submit', validarFormulario);
-    $inputOpinion.addEventListener('blur', validarInputOpinion);
-    $formularioOpinion.addEventListener('submit', e => e.preventDefault());
+    try {
+        $inputOpinion.addEventListener('blur', validarInputOpinion);
+        $formularioOpinion.addEventListener('submit', e => e.preventDefault());
+    } catch (error) {
+        console.log(':)');
+    }
 
     verficarTipoVuelo();
 }
 
 const validarInputOpinion = ({ target }) => {
     if(target.value.trim().length < 10 ){
+        const errorPrevio = document.querySelector('#error-opinion');
+        errorPrevio && errorPrevio.remove();
         target.classList.add('border-red-500');
-        const p = document.createElement('p')
+        const p = document.createElement('p');
+        p.id = 'error-opinion';
         p.textContent = 'Este campo debe tener al menos 10 caracteres';
         p.classList.add('text-red-500', 'text-sm', 'my-2');
         target.after(p);
