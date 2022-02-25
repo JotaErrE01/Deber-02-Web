@@ -13,7 +13,7 @@
     <style>
             .tabla{
                 margin: 35px auto;
-                width: 80%;
+                width: 100%;
             }
             table {
                 border: #b2b2b2 0.5px solid;
@@ -22,7 +22,7 @@
             }
             td, th {
                 border: #b2b2b2 0.5px solid;
-                height: 50px;
+                height: 10px;
                 padding: 15px;  
             }
             thead{

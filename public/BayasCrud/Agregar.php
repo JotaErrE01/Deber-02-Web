@@ -77,6 +77,7 @@
     <?php
 	// incluir archivo conexion.php
 	require_once '../conexion/db.php';
+    
 	if (!empty($_POST['usuario']) &&
 			 !empty($_POST['nombre']) && !empty($_POST['contraseña']) && !empty($_POST['lugar'])
 			 && !empty($_POST['fecha']) && !empty($_POST['email']) &&
