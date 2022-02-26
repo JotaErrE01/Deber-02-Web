@@ -73,7 +73,7 @@
                 $color = htmlentities($_POST['txtColor']);
                 $marca = htmlentities($_POST['txtMarca']);
                 $modelo = htmlentities($_POST['txtModelo']);
-                $precioDia = number_format(doubleval(htmlentities($_POST['txtPrecioDia'])),2,".",",");
+                $precioDia = number_format(doubleval(htmlentities($_POST['txtPrecioDia'])),2,".","");
                 $aireacondicionado = isset($_POST['aireacondicionado']) ? intval(htmlentities($_POST['aireacondicionado'])) : intval('0');
                 $categoria = intval(htmlentities($_POST['categoria']));
             
