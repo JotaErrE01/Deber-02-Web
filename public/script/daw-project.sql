@@ -110,6 +110,82 @@ INSERT INTO `vuelos` (`id`, `ciudad_origen_id`, `ciudad_destino_id`, `fecha_sali
 
 INSERT INTO `categoriavehiculo` VALUES (1,'Pequeño',NULL),(2,'Mediano',NULL),(3,'Familiar',NULL),(4,'SUV',NULL);
 
+
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 26-02-2022 a las 19:08:15
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `pagina_turismo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `hoteles`
+--
+
+CREATE TABLE `hoteles` (
+  `Id` int(11) NOT NULL,
+  `Nombrehotel` varchar(50) NOT NULL,
+  `ProvinciaCiudad` varchar(50) NOT NULL,
+  `Email` varchar(70) NOT NULL,
+  `NumeroCuartos` int(11) NOT NULL,
+  `TipoHotel` text NOT NULL,
+  `Estrellas` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `hoteles`
+--
+
+INSERT INTO `hoteles` (`Id`, `Nombrehotel`, `ProvinciaCiudad`, `Email`, `NumeroCuartos`, `TipoHotel`, `Estrellas`) VALUES
+(2, 'Hilton Colon', 'Guayas - Guayaquil', 'hiltoncolon@hoteles.com', 671, 'Hotel de ciudad', '4 estrellas'),
+(6, 'Oro verde ', 'El oro - Machala', 'oroverdemach@hoteles.com', 350, 'Hotel de ciudad', '4 estrellas'),
+(11, 'Royal ', 'Pichincha - Quito', 'royalhotel@hoteles.com', 433, 'Hotel de ciudad', '4 estrellas'),
+(12, 'Oro verde', 'Guayas  - Guayaquil', 'oroverdegye@hoteles.com', 500, 'Hotel de ciudad', '5 estrellas');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `hoteles`
+--
+ALTER TABLE `hoteles`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `hoteles`
+--
+ALTER TABLE `hoteles`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
