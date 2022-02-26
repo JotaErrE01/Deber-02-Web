@@ -21,10 +21,10 @@
         <div id="contenedor-formulario">
             <h1 class="titulos-seccion Formulario"> Agregar nuevo Vehiculo</h1>
             <div id="campos-ingreso">
-                <form id="form-renta" method="POST" >
+                <form class="form-renta" id="formAgregar" method="POST">
                     <div class="campos">
                         <label for="i-placa">Placa:</label>
-                        <input type="text" id="i-placa" name="txtPlaca" required>
+                        <input type="text" id="i-placa" name="txtPlaca" required pattern="[A-Z]{3}[-][0-9]{4}" title="Las placas deben seguir el siguiente formato: AAA-0001">
                     </div>
                     <div class="campos"><label for="i-color">Color:</label>
                         <input type="text" id="i-color" name="txtColor" required>
@@ -42,13 +42,13 @@
                         <label>Categoria:</label>
                         <select name="categoria" id="categorias" required>
                             <?php
-                            require_once '../conexion.php';
-                            $stmt = $pdo->prepare("SELECT * FROM categoriavehiculo");
-                            $stmt->execute();
-                            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            foreach ($data as $valores):
+                            require_once '../conexion/db.php';
+                            $db= conectarDB();
+                            $sql = "SELECT * FROM categoriavehiculo";
+                            $resultado = mysqli_query($db, $sql);
+                            while($valores = mysqli_fetch_assoc($resultado)){
                                 echo '<option value="' . $valores['id_categoria_vehiculo'] . '">' . $valores["nombre"] . '</option>';
-                            endforeach;
+                            }
                             ?>
                         </select>
                     </div>
@@ -68,30 +68,29 @@
         <?php
         if (!empty($_POST['txtPlaca']) && !empty($_POST['txtColor']) && !empty($_POST['txtModelo']) &&
                 !empty($_POST['txtMarca']) && !empty($_POST['txtPrecioDia']) && !empty($_POST['categoria'])) {
-
-
-            $aireacondicionado = isset($_POST['aireacondicionado']) ? intval(htmlentities($_POST['aireacondicionado'])) : intval('0');
-
-            $data = [
-                'placa' => htmlentities($_POST['txtPlaca']),
-                'color' => htmlentities($_POST['txtColor']),
-                'marca' => htmlentities($_POST['txtMarca']),
-                'modelo' => htmlentities($_POST['txtModelo']),
-                'precioDia' => number_format(doubleval(htmlentities($_POST['txtPrecioDia'])),2,".",","),
-                'aireacondicionado' => $aireacondicionado,
-                'categoria' => intval(htmlentities($_POST['categoria'])),
-            ];
-            $sql = "insert into vehiculo(placa, color, marca, modelo, precioDia, aire_acondicionado, id_categoria) values(:placa, :color, :marca,:modelo,"
-                    . ":precioDia, :aireacondicionado, :categoria)";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute($data);
-
-            if ($stmt->rowCount() > 0) {// rowCount() permite conocer el numero de filas afectadas
-                header("location:presentar.php");
+            
+                $placa = htmlentities($_POST['txtPlaca']);
+                $color = htmlentities($_POST['txtColor']);
+                $marca = htmlentities($_POST['txtMarca']);
+                $modelo = htmlentities($_POST['txtModelo']);
+                $precioDia = number_format(doubleval(htmlentities($_POST['txtPrecioDia'])),2,".",",");
+                $aireacondicionado = isset($_POST['aireacondicionado']) ? intval(htmlentities($_POST['aireacondicionado'])) : intval('0');
+                $categoria = intval(htmlentities($_POST['categoria']));
+            
+            $sql = "insert into vehiculo(placa, color, marca, modelo, precioDia, aire_acondicionado, id_categoria) 
+            values('$placa', '$color', '$marca','$modelo',$precioDia, $aireacondicionado, $categoria)";
+            
+            if (mysqli_query($db, $sql)) {// si se ejecuto sin errores
+                header("location:presentar.php"); //redireccionar
+            } else {
+                echo "Error: " . $sql . "" . mysqli_error($db);
             }
         }?>
 
  
         <?php include_once '../templates/footer.php'; ?>
+
+
+
     </body>
 </html>
