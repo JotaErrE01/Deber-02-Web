@@ -13,7 +13,7 @@
 <body>
     <!-- Header -->
     <?php
-    include '../templates/header.php';
+    include './templates/header.php';
     ?>
 
     <!-- Contenido principal -->
@@ -23,7 +23,7 @@
 
         <div class="md:grid-cols-2 md:w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center gap-5 my-5">
             <?php
-            require __DIR__ . '/Vuelo.php';
+            require './RuizJonathanCRUD/Vuelo.php';
             $vuelo = new Vuelo;
             $vuelos = $vuelo->getAll();
             foreach ($vuelos as $vuelo) :
@@ -55,14 +55,14 @@
             </div>
 
             <div class="flex justify-center md:justify-start">
-                <a href="adminVuelos.php" class="block w-fit p-2 border-amber-600 border-solid border-2 text-amber-700 hover:text-white hover:bg-amber-600 rounded-lg">Administrar Vuelos (Solo Administradores)</a>
+                <a href="/RuizJonathanCRUD/adminVuelos.php" class="block w-fit p-2 border-amber-600 border-solid border-2 text-amber-700 hover:text-white hover:bg-amber-600 rounded-lg">Administrar Vuelos (Solo Administradores)</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <?php
-    include '../templates/footer.php';
+    include './templates/footer.php';
     ?>
 </body>
 

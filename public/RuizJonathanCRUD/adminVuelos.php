@@ -28,7 +28,7 @@
         <div class="md:grid-cols-2 md:w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-3 text-center gap-5 my-10">
 
             <?php
-            require __DIR__ . '/Vuelo.php';
+            require './Vuelo.php';
             $vuelo = new Vuelo;
             $vuelos = $vuelo->getAll();
             foreach ($vuelos as $vuelo) :

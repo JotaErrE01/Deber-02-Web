@@ -1,6 +1,6 @@
 <?php
 
-require_once '../conexion/db.php';
+require_once __DIR__ . '/../conexion/db.php';
 
 class Vuelo {
     public $tabla = 'vuelos';

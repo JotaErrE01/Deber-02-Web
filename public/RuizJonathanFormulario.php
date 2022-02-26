@@ -12,7 +12,7 @@
 <body>
     <!-- Header -->
     <?php 
-        include '../templates/header.php';
+        include './templates/header.php';
     ?>
 
     <!-- Formulario de Vuelos -->
@@ -97,7 +97,7 @@
 
     <!-- Footer -->
     <?php 
-        include '../templates/footer.php';
+        include './templates/footer.php';
     ?>
     <script src="/js/RuizJonathanValidacion.js"></script>
 </body>
