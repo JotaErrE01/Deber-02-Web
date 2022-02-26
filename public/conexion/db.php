@@ -1,7 +1,7 @@
 <?php
 
 function conectarDB() {
-    $conexion = mysqli_connect("", "", "", "");
+    $conexion = mysqli_connect("<tu_host>", "<tu_usuario>", "<tu_password>", "<nombre_base_datos>");
 
     if (!$conexion) {
         return die("Error al conectar con la base de datos: " . mysqli_connect_error());
