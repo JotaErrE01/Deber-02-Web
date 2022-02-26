@@ -14,16 +14,14 @@
     <body>
         <?php
         include_once '../templates/header.php';
-        require_once '../conexion.php';
-        if (isset($_GET['id'])) {
+        require_once '../conexion/db.php';
+        $db= conectarDB();
 
-            $data = ['id' => htmlentities($_GET['id'])];
-            $sql = "select * from vehiculo where id_vehiculo =:id";
-
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute($data);
-            $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            foreach ($filas as $fila) {
+        if (!empty($_GET['id'])) {
+            $id =  htmlentities($_GET['id']);
+            $sql = "select * from vehiculo where id_vehiculo =".$id;
+            $resultado = mysqli_query($db, $sql);
+            while ($fila = mysqli_fetch_assoc($resultado)){
         ?>
 
                 <main id="main-formulario">
@@ -34,16 +32,16 @@
                                 <div class="campos">
                                     <input type="hidden" name="txtid" value="<?php echo $fila['id_vehiculo'] ?>">
                                     <label for="i-placa">Placa:</label>
-                                    <input type="text" id="i-placa" name="txtPlaca" value="<?php echo $fila['placa'] ?> ">                                   
+                                    <input type="text" id="i-placa" name="txtPlaca" readonly required value="<?php echo $fila['placa'] ?> ">                                   
                                 </div>
                                 <div class="campos"><label for="i-color">Color:</label>
-                                    <input type="text" id="i-color" name="txtColor" value="<?php echo $fila['color'] ?>">
+                                    <input type="text" id="i-color" name="txtColor" readonly required value="<?php echo $fila['color'] ?>">
                                 </div>
                                 <div class="campos"><label for="i-marca">Marca:</label>
-                                    <input type="text" id="i-marca" name="txtMarca" value="<?php echo $fila['marca'] ?>">
+                                    <input type="text" id="i-marca" name="txtMarca" readonly required value="<?php echo $fila['marca'] ?>">
                                 </div>
                                 <div class="campos"><label for="i-modelo">Modelo:</label>
-                                    <input type="text" id="i-modelo" name="txtModelo" value="<?php echo $fila['modelo'] ?>">
+                                    <input type="text" id="i-modelo" name="txtModelo" readonly required value="<?php echo $fila['modelo'] ?>">
                                 </div>
                                 <div id="botones">                   
                                     <input type="submit" id="boton-enviar" value="Eliminar">
@@ -59,17 +57,15 @@
         }
         ?>
         <?php
-        if (isset($_POST['txtid'])) {
-            $data = ['id' => htmlentities($_POST['txtid'])];
-            $sql = "delete from vehiculo where id_vehiculo = :id";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute($data);
-
-            if ($stmt->rowCount() > 0) {// rowCount() permite conocer el numero de filas afectadas
-                header("location:presentar.php");
-            } else {
-                echo 'NO se pudo eliminar el registro';
-            }
+        if (isset($_POST['txtid']) && !empty($_POST['txtid'])) {
+            $id = htmlentities($_POST['txtid']);
+            $sql2 = "delete from vehiculo where id_vehiculo = $id";
+              if(mysqli_query($db, $sql2)){
+                     header("location:presentar.php");
+                  
+              }else{                  
+                echo 'No se pudo eliminar el registro';
+              }
         }
         ?>
 

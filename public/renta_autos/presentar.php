@@ -76,12 +76,11 @@ and open the template in the editor.
 
         <?php
         include_once '../templates/header.php';
-       require_once '../conexion.php';
+        require_once '../conexion/db.php';
 
-
+        $db= conectarDB();
         $sql = "select * from vehiculo, categoriavehiculo where id_categoria=id_categoria_vehiculo";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        $resultado = mysqli_query($db, $sql);
         ?>
         <h1 class="titulos-seccion Formulario">Vehiculos</h1>
         <div id="tabla-contenedor">
@@ -99,8 +98,7 @@ and open the template in the editor.
                 </thead>
                 <tbody>
                     <?php
-                    $filas = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($filas as $fila) {
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
                         ?>
                         <tr>
                             <td><?php echo $fila['placa'] ?></td>

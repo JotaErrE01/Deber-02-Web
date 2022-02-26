@@ -108,6 +108,7 @@ INSERT INTO `vuelos` (`id`, `ciudad_origen_id`, `ciudad_destino_id`, `fecha_sali
 (11, 3, 4, '2022-03-20', '2022-03-25', 200.00, 1),
 (12, 4, 3, '2022-03-20', NULL, 200.00, 1);
 
+INSERT INTO `categoriavehiculo` VALUES (1,'Pequeño',NULL),(2,'Mediano',NULL),(3,'Familiar',NULL),(4,'SUV',NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
