@@ -10,7 +10,7 @@
         <nav id="nav" class="opacity-0 h-0 invisible sm:visible sm:h-auto sm:opacity-100 sm:flex gap-2 flex-col text-center sm:flex-row sm:justify-between sm:gap-4 sm:text-2sm transition-all duration-300 ease-in-out">
             <a class="hover:text-orange-500 text-lg sm:text-base" href="/RuizJonathanCRUD/RuizJonathan.php">Vuelos</a>
             <a class="hover:text-orange-500 text-lg sm:text-base" href="DavilaJose.html">Hoteles</a>
-            <a class="hover:text-orange-500 text-lg sm:text-base" href="RonquilloVanessa.html">Reserva de Autos</a>
+            <a class="hover:text-orange-500 text-lg sm:text-base" href="../renta_autos/agregar.php">Reserva de Autos</a>
             <a class="hover:text-orange-500 text-lg sm:text-base" href="TenemeaNeysser.html">Gastronomia</a>
         </nav>
     </div>
