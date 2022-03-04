@@ -11,7 +11,7 @@
             <a class="hover:text-orange-500 text-lg sm:text-base" href="/RuizJonathan.php">Vuelos</a>
             <a class="hover:text-orange-500 text-lg sm:text-base" href="/DavilaJose.php">Hoteles</a>
             <a class="hover:text-orange-500 text-lg sm:text-base" href="../renta_autos/agregar.php">Reserva de Autos</a>
-            <a class="hover:text-orange-500 text-lg sm:text-base" href="TenemeaNeysser.html">Gastronomia</a>
+            <a class="hover:text-orange-500 text-lg sm:text-base" href="/TenemeaCrud/formulario.php">Gastronomia</a>
         </nav>
     </div>
 </header>
